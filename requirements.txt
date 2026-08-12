@@ -1,7 +1,26 @@
-# Lightweight public evidence environment only.
-# This file does not recreate the separate GPU/CUDA DeepRV environment; see
-# question_5_project_organisation/representative_64x64_experiment/README.md.
+# Lightweight public evidence environment.
 requests>=2.31,<3
 numpy>=1.26,<3
 pandas>=2.0,<3
 matplotlib>=3.8,<4
+
+# Representative DeepRV 64x64 run: recorded environment reference.
+# These lines are comments because installing this root file should not attempt
+# to recreate the separate Colab GPU computation.
+#
+# Operating system: Linux-6.6.122+-x86_64-with-glibc2.35
+# Python: 3.12.13 (GCC 11.4.0 build)
+# Accelerator: NVIDIA A100; JAX device cuda:0
+# JAX backend: GPU
+# XLA_PYTHON_CLIENT_PREALLOCATE=false
+# jax==0.8.3
+# numpyro==0.21.0
+#
+# Other imports checked by the notebook, with no archived version numbers:
+# flax, optax, orbax-checkpoint, arviz, scipy, matplotlib, dl4bi, dl4bi_sps
+# Missing imports triggered installation of:
+# dl4bi[benchmarks,cuda12] @ git+https://github.com/paytonni/dl4bi.git
+#
+# A full rerun also requires the archived Phase 4D source package, frozen data
+# and pretrained decoder checkpoints. See:
+# question_5_project_organisation/representative_64x64_experiment/README.md
