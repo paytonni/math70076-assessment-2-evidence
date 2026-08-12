@@ -13,20 +13,6 @@ This public repository contains selected, privacy-safe evidence for five reflect
 
 Each question directory explains what was original, what was added during Assessment 2, and what can be reproduced from the public files.
 
-## Evidence boundaries
-
-The repository deliberately excludes:
-
-- assessment instruction PDFs and the final assessment PDF;
-- the original MATH70093 submission PDF and R Markdown;
-- private Teams or Zulip messages and files containing other students' identities;
-- API credentials, environment files and tokens;
-- absolute personal paths, virtual environments and caches;
-- large raw API downloads, DeepRV posterior archives, checkpoints and full sampler RDS objects;
-- copied `.git` directories or claims about Git history that could not be verified.
-
-The London Air source data are public, but only a concise saved-run summary is included. DeepRV raw posterior archives are too large for this evidence repository; the plotting code and final figure remain inspectable, while exact reproduction requires the original archives through the documented environment variable.
-
 ## Reproduction overview
 
 Python dependencies are listed in `requirements.txt`. Question 1 tests use the standard `unittest` runner. Question 3/4 require R 4.5.1 for the recorded environment and `testthat` 3.2.3 for the included test suite. Runtime results are machine-specific; the saved benchmark is evidence of the recorded local run rather than a universal performance guarantee.
