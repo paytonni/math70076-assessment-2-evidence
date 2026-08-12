@@ -16,7 +16,3 @@ Status: retrospective Assessment 2 inventory derived from locally inspected proj
 
 The output store was approximately 33 GiB and contained overlapping output roots, historical archives and active checkpoint trees. Moving files merely to improve appearance could have damaged provenance or recovery. A future layout should keep code and small configuration under Git, place immutable large artifacts in managed external storage, and link them through one experiment registry containing hashes, environments and result status.
 
-## Reproducibility lesson
-
-A random seed alone did not uniquely identify regenerated data across the T4/A100 workflows. Frozen arrays, hashes, environment information and explicit result authority were needed before comparing posterior methods.
-
