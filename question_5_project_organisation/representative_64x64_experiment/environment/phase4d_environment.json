@@ -1,0 +1,11 @@
+{
+  "created_at_utc": "2026-07-28T14:28:50.128623+00:00",
+  "decoder_seed": 0,
+  "nuts_seed": 4,
+  "phase4c_posterior_used": false,
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+  "protocol_id": "phase4d_a100_authoritative_original200k_v1",
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "selected_seed": 4,
+  "xla_python_client_preallocate": "false"
+}

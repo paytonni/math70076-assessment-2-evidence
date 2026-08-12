@@ -22,6 +22,8 @@ The following paths are relative to the original DeepRV project and are not publ
 - chronological record: `docs/EXPERIMENT_LOG.md`;
 - historical seed-0 manifest: `experiments/phase4d_seed0_baseline_manifest.json`.
 
+The completed archive also contains two small environment records used here: `seed_4/seed_4_phase4d_environment.json` records the Phase 4D protocol, platform, Python version, seeds and JAX memory setting; the Full GP `environment.json` records JAX 0.8.3, NumPyro 0.21.0 and device `cuda:0`. The public copies under `environment/` preserve every JSON key and value. The Phase 4D copy is byte-identical to the archived file; the Full GP copy differs only by a final newline added by the text-file editor. The notebook itself supplies the separate evidence that the JAX backend had to be GPU and the accelerator name had to contain `A100`.
+
 The completion marker records seed 4, 26 result rows, state `complete`, completion time `2026-07-28T14:28:50.293830+00:00`, and frozen-data SHA-256 `c26c1d6e1f06ea10900ba508becb2fa12585d9abe34ea268d48c52bbce22b995`.
 
 ## Public-copy transformations
@@ -41,12 +43,18 @@ The completion marker records seed 4, 26 result rows, state `complete`, completi
 | Public notebook copy | `36d78c105beda4cb13f11aab1b00338fa15fc4cd18a36860581c63202e5087f4` |
 | Results summary | `b106d4602446a3d5202692b7047acd82f751cfaef99acb0bea17cbae97d64686` |
 | Representative figure | `68c17f68c65b6f96a802655ce6b0c744ac6047ffa1e7958259e0b11d217ce721` |
+| Public Phase 4D environment JSON | `497b28cc959062e8115d357297ccd2cd9823575495f07099aaac174c7b8247d4` |
+| Public Full GP environment JSON | `cc42ac5e6313145b141e2401595b2218b7a2d84feb8872ae68ef53eca57f05c6` |
 
 ## Public file tree
 
 ```text
 representative_64x64_experiment/
 |-- README.md
+|-- environment/
+|   |-- README.md
+|   |-- full_gp_environment.json
+|   `-- phase4d_environment.json
 |-- experiment_config.yaml
 |-- phase4d_seed4_from_seed0_benchmark_colab.ipynb
 |-- provenance.md
@@ -57,4 +65,4 @@ representative_64x64_experiment/
 
 ## Exclusions
 
-The public folder excludes the 3.2-GiB result archive, checkpoints, full posterior arrays, posterior-predictive arrays, caches, virtual environments, source ZIPs, private communication and machine-specific personal paths. Colab paths retained inside the notebook are part of the original executable workflow and do not identify a local user account.
+The public folder excludes the 3.2-GiB result archive, checkpoints, full posterior arrays, posterior-predictive arrays, caches, virtual environments, source ZIPs, private communication and machine-specific personal paths. Colab paths retained inside the notebook are part of the original executable workflow and do not identify a local user account. The project-level `pyproject.toml` and `uv.lock` were not used to fill gaps in the archived Colab record because a repository lockfile does not prove the exact packages installed in that completed remote runtime.

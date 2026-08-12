@@ -65,6 +65,11 @@ hardware_and_environment:
   accelerator: NVIDIA A100 GPU
   platform: Linux-6.6.122+-x86_64-with-glibc2.35
   python: "3.12.13"
+  jax: "0.8.3"
+  numpyro: "0.21.0"
+  jax_devices: ["cuda:0"]
+  notebook_required_backend: gpu
+  notebook_required_accelerator_name_contains: A100
   xla_python_client_preallocate: false
 
 verified_outputs:
