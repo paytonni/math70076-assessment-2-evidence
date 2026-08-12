@@ -1,0 +1,14 @@
+"metric","value"
+"stage2_unprofiled_median_seconds",5.88000000000001
+"stage1_unprofiled_median_seconds_same_5_run_benchmark",6.939
+"baseline_unprofiled_median_seconds_same_5_run_benchmark",10.429
+"stage2_speed_up_vs_stage1",1.18010204081632
+"stage2_runtime_reduction_percent_vs_stage1",15.2615650670124
+"stage2_speed_up_vs_baseline",1.77363945578231
+"stage2_runtime_reduction_percent_vs_baseline",43.6187553936139
+"stage2_rprof_allocation_reduction_percent_vs_stage1",21.3490969159988
+"stage2_rprof_allocation_reduction_percent_vs_baseline",53.4603236151839
+"stage2_target_total_time_reduction_percent_vs_stage1",88.7179487179487
+"stage2_sample_matrix_size_change_percent_vs_stage1",0
+"prior_stage1_median_seconds_3_run_evidence",7.115
+"prior_baseline_median_seconds_3_run_evidence",10.375

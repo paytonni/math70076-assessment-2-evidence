@@ -1,0 +1,10 @@
+"check","value"
+"sample_dimensions_match",1
+"improved_samples_respect_lower_bound",1
+"improved_rw_rates_in_unit_interval",1
+"improved_swap_rates_in_unit_interval",1
+"samples_elementwise_identical_information_only",1
+"maximum_absolute_rw_acceptance_difference",0
+"maximum_absolute_swap_acceptance_difference",0
+"absolute_cold_chain_mean_difference",0
+"absolute_cold_chain_sd_difference",0

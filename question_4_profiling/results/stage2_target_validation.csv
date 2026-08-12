@@ -1,0 +1,11 @@
+"check","value"
+"fixed_points_count",13
+"random_points_count",1000
+"below_support_points_count",4
+"fixed_points_max_absolute_log_density_difference",0
+"random_points_max_absolute_log_density_difference",0
+"overall_max_absolute_log_density_difference",0
+"non_finite_mismatch_count",0
+"support_handling_correct",1
+"scalar_rejects_vector_input",1
+"numeric_equivalence_passed",1
