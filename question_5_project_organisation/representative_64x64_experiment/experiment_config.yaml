@@ -1,0 +1,77 @@
+experiment:
+  id: phase4d_a100_authoritative_original200k_v1
+  status: complete
+  completed_at_utc: "2026-07-28T14:28:50.293830+00:00"
+
+data:
+  model: Poisson log-Gaussian process
+  covariance_kernel: Matern-1/2
+  grid_resolution: [64, 64]
+  domain: [0.0, 100.0]
+  total_locations: 4096
+  observation_mask: uniform_without_replacement
+  observation_ratio: 0.5
+  observed_locations: 2048
+  true_beta: 1.0
+  true_lengthscale: 30.0
+  covariance_variance: 1.0
+  covariance_jitter: 0.0005
+  data_seed: 4
+  authoritative_data_sha256: c26c1d6e1f06ea10900ba508becb2fa12585d9abe34ea268d48c52bbce22b995
+
+seeds:
+  decoder_seed: 0
+  nuts_seed: 4
+
+models:
+  full_gp_reference: 1
+  deeprv:
+    count: 13
+    teachers: [exact, bilinear, cubic, dtc, fitc]
+    inducing_grid_sides: [8, 16, 32]
+  direct_inducing_gp:
+    count: 12
+    methods: [kissgp_ski_bilinear, kissgp_ski_cubic, dtc_sor, fitc]
+    inducing_grid_sides: [8, 16, 32]
+
+decoder_training:
+  training_run_in_phase4d: false
+  checkpoint_step: 200000
+  historical_training_steps: 200000
+  historical_batch_size: 16
+  historical_learning_rate: 0.005
+  checkpoint_interval: 10000
+
+mcmc:
+  sampler: NUTS
+  chains: 2
+  initial_warmup_per_chain: 500
+  initial_retained_samples_per_chain: 2000
+  extended_warmup_per_chain: 1000
+  extended_retained_samples_per_chain: 4000
+  target_accept_probability: 0.8
+  maximum_tree_depth: 10
+  initialization: init_to_median(num_samples=10)
+  prediction_draws_per_chain: 2000
+
+diagnostic_thresholds:
+  maximum_rhat: 1.01
+  minimum_bulk_ess: 400.0
+  minimum_tail_ess: 400.0
+  maximum_relative_mcse: 0.05
+  coverage_level: 0.9
+
+hardware_and_environment:
+  accelerator: NVIDIA A100 GPU
+  platform: Linux-6.6.122+-x86_64-with-glibc2.35
+  python: "3.12.13"
+  xla_python_client_preallocate: false
+
+verified_outputs:
+  result_rows: 26
+  diagnostic_pass_rows: 26
+  initial_budget_rows: 20
+  extended_budget_rows: 6
+  public_results_summary: results_summary.csv
+  public_representative_figure: figures/posterior_maps_seed4.png
+  large_result_archive_published: false
