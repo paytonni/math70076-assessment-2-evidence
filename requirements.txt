@@ -1,5 +1,7 @@
+# Lightweight public evidence environment only.
+# This file does not recreate the separate GPU/CUDA DeepRV environment; see
+# question_5_project_organisation/representative_64x64_experiment/README.md.
 requests>=2.31,<3
 numpy>=1.26,<3
 pandas>=2.0,<3
 matplotlib>=3.8,<4
-
